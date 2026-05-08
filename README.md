@@ -1,6 +1,8 @@
 # ProfBridge: LLM-Guided GPU Kernel Optimization
 
-> A research prototype for evaluating LLM-generated GPU kernel optimization candidates with profiler feedback from NVIDIA Nsight Compute.
+> A research prototype for evaluating and analyzing LLM-generated GPU optimization candidates with NVIDIA Nsight Compute profiler feedback.
+
+ProfBridge is not intended to compete with production GPU kernel generators. The goal is to study profiler-aware feedback, evaluation infrastructure, and claim calibration for LLM-guided GPU optimization research.
 
 ## Abstract
 
@@ -8,7 +10,7 @@ LLM-guided compiler optimization systems can generate many candidate GPU impleme
 
 **ProfBridge** builds an end-to-end research prototype around KernelBench-style GPU operators, PyTorch, NVIDIA Nsight Compute, and LLM-generated candidate code. It introduces a structured feedback representation called `ProfileSketch` and evaluates `Value-of-Profile`, a policy that decides whether a candidate should receive full profiler feedback or use predicted feedback instead.
 
-This repository is not a finished paper and does not claim that ProfBridge is a production GPU kernel generator. The final conclusion is deliberately conservative: reducing profiling calls alone is not enough for a strong compiler paper. The most useful outcome is an experimental infrastructure for GPU profiling, candidate evaluation, feedback representation, and claim calibration.
+This repository is not a finished paper. The final conclusion is deliberately conservative: reducing profiling calls alone is not enough for a strong compiler paper. The most useful outcome is an experimental infrastructure for GPU profiling, candidate evaluation, feedback representation, and claim calibration.
 
 ## Motivation
 
@@ -130,14 +132,14 @@ Main lessons:
 
 ```text
 profbridge/
-├── profbridge/       # core Python package
-├── scripts/          # experiment and analysis scripts
-├── configs/          # experiment configs
-├── docs/             # method and workflow documentation
-├── reports/curated/  # curated experiment reports
-├── tables/curated/   # summarized result tables
-├── figures/curated/  # curated figures
-└── examples/         # small example records
+|-- profbridge/       # core Python package
+|-- scripts/          # experiment and analysis scripts
+|-- configs/          # experiment configs
+|-- docs/             # method and workflow documentation
+|-- reports/curated/  # curated experiment reports
+|-- tables/curated/   # summarized result tables
+|-- figures/curated/  # curated figures
+`-- examples/         # small example records
 ```
 
 ## How to Run
@@ -152,20 +154,27 @@ python scripts/smoke_test.py
 ### 2. Build ProfileSketch records from examples
 
 ```bash
-python scripts/build_profile_sketches.py           --input examples/minimal_profile_pair.jsonl           --out results/profile_sketches.jsonl
+python scripts/build_profile_sketches.py \
+  --input examples/minimal_profile_pair.jsonl \
+  --out results/profile_sketches.jsonl
 ```
 
 ### 3. Run Value-of-Profile replay
 
 ```bash
-python scripts/run_value_of_profile_eval.py           --profile-sketches examples/sample_profilesketches.jsonl           --profile-budget-fraction 0.5           --policy always_profile,cheap_only,periodic_profile,uncertainty_only,value_of_profile
+python scripts/run_value_of_profile_eval.py \
+  --profile-sketches examples/sample_profilesketches.jsonl \
+  --profile-budget-fraction 0.5 \
+  --policy always_profile,cheap_only,periodic_profile,uncertainty_only,value_of_profile
 ```
 
-### 4. Run statistical sanity analysis
+### 4. Inspect statistical sanity analysis
 
 ```bash
 python scripts/analyze_p10h_statistical_sanity.py
 ```
+
+The public release ships curated statistical summaries rather than the full private phase logs. The script therefore reads `tables/curated/` by default and prints the conservative paper-facing interpretation.
 
 ## Reproducibility Notes
 

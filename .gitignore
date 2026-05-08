@@ -9,4 +9,8 @@ env/
 .env
 *.log
 results/
+reports/phase_*.md
+reports/phase_*/
+tables/phase_*/
+figures/phase_*/
 external/KernelBench/
