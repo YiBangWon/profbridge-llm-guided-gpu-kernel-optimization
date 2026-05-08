@@ -1,0 +1,7 @@
+comparison,n_tasks,mean_diff,bootstrap_ci_low,bootstrap_ci_high,favorable_direction,wins,losses,ties,sign_test_p_two_sided,interpretation
+feedback_error_vop_minus_periodic_profile,5,-7.547769045120888e-05,-0.39998323700518923,0.39983228162428686,lower,2,3,0,1.0,tiny_or_inconclusive
+speedup_without_task88_vop_minus_periodic_profile,4,0.33279529663013674,-0.0007071370609696426,0.9862694109672567,higher,2,2,0,1.0,directional_small_n
+feedback_error_vop_minus_random_profile,5,-6.980984948810054e-05,-0.5000322196229823,0.39989770078524933,lower,2,2,1,1.0,tiny_or_inconclusive
+speedup_without_task88_vop_minus_random_profile,4,0.3292490360988195,-0.0009778244267676928,0.9776697644319152,higher,2,2,0,1.0,directional_small_n
+feedback_error_vop_minus_uncertainty_only,5,-1.064759988063102e-05,-0.5999728675105771,0.5999388288259409,lower,2,3,0,1.0,tiny_or_inconclusive
+speedup_without_task88_vop_minus_uncertainty_only,4,0.0019701325142867654,0.000822593886145917,0.003117671142427614,higher,4,0,0,0.125,directional_small_n

@@ -1,0 +1,6 @@
+claim,status,evidence,weakness,safe_wording
+ProfileSketch structured representation,main,"Schema, P10H generation, integration",representation ablation mixed,structured acquisition/control representation
+VoP reduces method full profiles by 50%,main,P10H VoP 5/10 profiles,five tasks only,in P10H bounded live validation
+VoP improves task88-excluded search-quality over periodic/random,main,VoP 1.2337x vs periodic 0.9957x/random 0.9993x,uncertainty-only close,"above periodic/random, competitive with uncertainty-only"
+VoP dominates uncertainty-only,unsupported,uncertainty-only nearly tied,not supported,uncertainty-only is a strong comparator
+Task36 handled,unsupported,repair failed,unresolved,task36 is an unresolved limitation
