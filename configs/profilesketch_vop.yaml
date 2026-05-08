@@ -1,0 +1,11 @@
+profile_budget_fraction: [0.25, 0.5, 0.75]
+policies:
+  - always_profile
+  - cheap_only
+  - periodic_profile
+  - random_profile
+  - uncertainty_only
+  - predicted_benefit_only
+  - value_of_profile
+  - oracle_vop
+note: "Oracle VoP is diagnostic only and is not a method claim."

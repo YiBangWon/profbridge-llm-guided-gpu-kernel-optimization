@@ -1,0 +1,13 @@
+{
+  "metrics": [
+    "gpu__time_duration",
+    "gpu__time_active",
+    "sm__warps_active",
+    "dram__bytes",
+    "dram__bytes_read",
+    "dram__bytes_write",
+    "smsp__inst_executed",
+    "smsp__cycles_active",
+    "smsp__cycles_elapsed"
+  ]
+}

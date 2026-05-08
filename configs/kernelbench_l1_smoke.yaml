@@ -1,0 +1,7 @@
+{
+  "level": 1,
+  "tasks": [1],
+  "num_warmup": 10,
+  "num_repeats": 50,
+  "backends": ["pytorch_eager"]
+}
