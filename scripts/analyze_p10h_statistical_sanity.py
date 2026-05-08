@@ -10,7 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 
 
-ROOT = Path("/home/hansol/research/profbridge")
+ROOT = Path(__file__).resolve().parents[1]
 PHASE = "phase_09h"
 POLICIES = [
     "always_profile",
