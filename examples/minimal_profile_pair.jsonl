@@ -1,0 +1,1 @@
+{"task_id": 2, "candidate_id": "example_candidate", "parent_candidate_id": "example_parent", "latency_mean_ms": 1.25, "parent_latency": 1.5, "speedup_over_eager": 1.2, "parsed_metrics": {"dram__bytes": 1048576.0, "smsp__inst_executed": 220000.0, "sm__warps_active": 0.62}, "prediction_error_shadow": 0.12, "predicted_uncertainty": 0.35, "predicted_bottleneck": "memory_bound"}

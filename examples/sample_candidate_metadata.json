@@ -1,0 +1,9 @@
+{
+  "candidate_id": "example_candidate",
+  "task_id": 2,
+  "source_type": "llm_generated_candidate",
+  "safety_pass": true,
+  "correctness_pass": true,
+  "ncu_success": true,
+  "note": "Synthetic metadata for README examples."
+}

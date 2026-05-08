@@ -1,0 +1,27 @@
+{
+  "task_id": 2,
+  "candidate_id": "example_candidate",
+  "predicted_metrics": [
+    {
+      "metric_name": "dram__bytes",
+      "predicted_value": 1048576.0,
+      "uncertainty": 0.35,
+      "missing": false
+    }
+  ],
+  "bottleneck": {
+    "primary_label": "memory_bound",
+    "confidence": 0.65
+  },
+  "acquisition": {
+    "predicted_benefit": 0.55,
+    "uncertainty_score": 0.35,
+    "profile_cost_estimate": 20.0,
+    "value_of_profile": 0.009625,
+    "decision": "predict_only"
+  },
+  "provenance": {
+    "signal_source": "predicted",
+    "note": "synthetic public example"
+  }
+}
