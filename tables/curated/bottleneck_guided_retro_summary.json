@@ -1,0 +1,156 @@
+{
+  "raw_records": 85,
+  "gate_counts": {
+    "control_static": {
+      "raw": 10,
+      "gated": 10
+    },
+    "guided_predicted_bottleneck": {
+      "raw": 10,
+      "gated": 10
+    },
+    "corrupted_wrong": {
+      "raw": 10,
+      "gated": 10
+    },
+    "corrupted_random": {
+      "raw": 10,
+      "gated": 10
+    },
+    "corrupted_noisy": {
+      "raw": 10,
+      "gated": 10
+    },
+    "guided_label_only": {
+      "raw": 5,
+      "gated": 4
+    },
+    "oracle_measured_bottleneck": {
+      "raw": 10,
+      "gated": 10
+    },
+    "prompt_only_framing": {
+      "raw": 10,
+      "gated": 10
+    },
+    "action_shaping": {
+      "raw": 5,
+      "gated": 5
+    },
+    "action_shaping_wrong": {
+      "raw": 5,
+      "gated": 5
+    }
+  },
+  "per_arm": [
+    {
+      "arm": "action_shaping",
+      "n_raw": 5,
+      "n_gated": 5,
+      "geomean_speedup_over_eager": 1.540022,
+      "geomean_speedup_vs_static_control": 1.006612
+    },
+    {
+      "arm": "action_shaping_wrong",
+      "n_raw": 5,
+      "n_gated": 5,
+      "geomean_speedup_over_eager": 1.531655,
+      "geomean_speedup_vs_static_control": 1.001143
+    },
+    {
+      "arm": "control_static",
+      "n_raw": 10,
+      "n_gated": 10,
+      "geomean_speedup_over_eager": 1.539581,
+      "geomean_speedup_vs_static_control": 1.0
+    },
+    {
+      "arm": "corrupted_noisy",
+      "n_raw": 10,
+      "n_gated": 10,
+      "geomean_speedup_over_eager": 1.683939,
+      "geomean_speedup_vs_static_control": 1.093765
+    },
+    {
+      "arm": "corrupted_random",
+      "n_raw": 10,
+      "n_gated": 10,
+      "geomean_speedup_over_eager": 1.551357,
+      "geomean_speedup_vs_static_control": 1.007649
+    },
+    {
+      "arm": "corrupted_wrong",
+      "n_raw": 10,
+      "n_gated": 10,
+      "geomean_speedup_over_eager": 1.542047,
+      "geomean_speedup_vs_static_control": 1.001602
+    },
+    {
+      "arm": "guided_label_only",
+      "n_raw": 5,
+      "n_gated": 4,
+      "geomean_speedup_over_eager": 1.218457,
+      "geomean_speedup_vs_static_control": 1.236894
+    },
+    {
+      "arm": "guided_predicted_bottleneck",
+      "n_raw": 10,
+      "n_gated": 10,
+      "geomean_speedup_over_eager": 1.823754,
+      "geomean_speedup_vs_static_control": 1.184578
+    },
+    {
+      "arm": "oracle_measured_bottleneck",
+      "n_raw": 10,
+      "n_gated": 10,
+      "geomean_speedup_over_eager": 1.686257,
+      "geomean_speedup_vs_static_control": 1.09527
+    },
+    {
+      "arm": "prompt_only_framing",
+      "n_raw": 10,
+      "n_gated": 10,
+      "geomean_speedup_over_eager": 1.823296,
+      "geomean_speedup_vs_static_control": 1.184281
+    }
+  ],
+  "contrasts": {
+    "guided_predicted_vs_static": {
+      "n_tasks": 5,
+      "point_ratio": 1.184578,
+      "ci95": [
+        0.993265,
+        1.657553
+      ],
+      "p_one_sided_a_not_better": 0.1183
+    },
+    "prompt_only_framing_vs_static": {
+      "n_tasks": 5,
+      "point_ratio": 1.184281,
+      "ci95": [
+        0.998897,
+        1.652599
+      ],
+      "p_one_sided_a_not_better": 0.0626
+    },
+    "guided_predicted_vs_prompt_only": {
+      "n_tasks": 5,
+      "point_ratio": 1.000251,
+      "ci95": [
+        0.990596,
+        1.010974
+      ],
+      "p_one_sided_a_not_better": 0.4802
+    },
+    "oracle_vs_static": {
+      "n_tasks": 5,
+      "point_ratio": 1.09527,
+      "ci95": [
+        1.001395,
+        1.292569
+      ],
+      "p_one_sided_a_not_better": 0.0
+    }
+  },
+  "interpretation": "Predicted bottleneck guidance is the top real-signal arm (+18% geomean vs static), but prompt-only optimization framing matches it and oracle/corrupted do not order as a clean causal story would require; with n=5 paired tasks the guided>static contrast is not significant. Honest conclusion: generic optimization framing, not profiler-derived numeric content, explains most of the measured gain."
+}

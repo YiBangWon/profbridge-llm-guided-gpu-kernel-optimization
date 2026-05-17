@@ -1,0 +1,11 @@
+arm,n_raw,n_gated,geomean_speedup_over_eager,geomean_speedup_vs_static_control
+action_shaping,5,5,1.540022,1.006612
+action_shaping_wrong,5,5,1.531655,1.001143
+control_static,10,10,1.539581,1.0
+corrupted_noisy,10,10,1.683939,1.093765
+corrupted_random,10,10,1.551357,1.007649
+corrupted_wrong,10,10,1.542047,1.001602
+guided_label_only,5,4,1.218457,1.236894
+guided_predicted_bottleneck,10,10,1.823754,1.184578
+oracle_measured_bottleneck,10,10,1.686257,1.09527
+prompt_only_framing,10,10,1.823296,1.184281
